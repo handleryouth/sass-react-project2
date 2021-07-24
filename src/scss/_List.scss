@@ -1,0 +1,19 @@
+.list {
+  @include flexContainer(row, center, unset);
+  padding: 1rem;
+  border-bottom: 1px solid hsl(234, 11%, 52%);
+  &__text {
+    flex-grow: 1;
+    @include flexContainer(row, center, space-between);
+    span {
+      font-size: 1.3rem;
+      color: hsl(234, 11%, 52%);
+    }
+  }
+  &__button {
+    font-size: 2rem;
+    background-color: transparent;
+    @include noborderoutline;
+    cursor: pointer;
+  }
+}

@@ -1,0 +1,45 @@
+.content {
+  text-align: center;
+}
+.content__container {
+  width: 50%;
+  background-color: transparent;
+  position: relative;
+  bottom: 13rem;
+  @include paddingmargin(0, 0 auto);
+  &--title {
+    @include flexContainer(row, center, space-between);
+    background-color: transparent;
+    margin: 0 0 2rem 0;
+    padding: 2rem;
+    h1 {
+      font-size: 2.5rem;
+      margin: 0;
+      color: white;
+      letter-spacing: 13px;
+    }
+    img {
+      cursor: pointer;
+    }
+  }
+
+  &--list-container {
+    margin-top: 3rem;
+  }
+
+  &--list {
+    padding: 1rem 0;
+    overflow: auto;
+    height: 29.5rem;
+    background-color: #25273c;
+  }
+  &--filter {
+    @include flexContainer(row, center, space-between);
+    color: hsl(233, 14%, 35%);
+    background-color: #25273c;
+    padding: 1rem;
+  }
+  &--clue {
+    margin-top: 2rem;
+  }
+}

@@ -1,25 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState, createContext, useEffect } from "react";
+import Content from "./components/Content";
+import Navbar from "./components/Navbar";
+import "./scss/main.scss";
 
-function App() {
+export const themeContext = createContext();
+
+const THEME_KEY = "Theme";
+
+export default function App() {
+  // this means dark theme activate (initial value " true" )
+  const [theme, setTheme] = useState(true);
+
+  useEffect(() => {
+    const localTheme = localStorage.getItem(THEME_KEY);
+    if (localTheme != null) {
+      setTheme(JSON.parse(localTheme));
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem(THEME_KEY, JSON.stringify(theme));
+  }, [theme]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <themeContext.Provider value={{ setTheme, theme }}>
+        <Navbar />
+        <Content />
+      </themeContext.Provider>
     </div>
   );
 }
-
-export default App;

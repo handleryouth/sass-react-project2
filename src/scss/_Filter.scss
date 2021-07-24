@@ -1,0 +1,12 @@
+.filter__button {
+  font-size: 1rem;
+  color: hsl(233, 14%, 35%);
+  cursor: pointer;
+  background-color: transparent;
+  margin: 0 0.7rem;
+  transition: color 0.2s ease;
+  @include noborderoutline;
+  &:hover {
+    color: white;
+  }
+}

@@ -1,0 +1,21 @@
+.input--container {
+  @include flexContainer(row, center, unset);
+  padding: 1rem;
+  border-radius: 5px;
+  &__input {
+    flex-grow: 1;
+    @include hw(3rem, auto);
+    @include noborderoutline;
+    font-size: 1.3rem;
+    background-color: transparent;
+    color: hsl(234, 11%, 52%);
+  }
+  &__button {
+    @include hw(3rem, 4rem);
+    cursor: pointer;
+    @include noborderoutline;
+    font-size: 1rem;
+    background-color: transparent;
+    color: hsl(234, 11%, 52%);
+  }
+}
