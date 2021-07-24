@@ -1,4 +1,4 @@
-import { useState, useContext, useEffect, useMemo } from "react";
+import { useState, useContext, useEffect } from "react";
 import { themeContext } from "../App";
 import { v4 as uuidv4 } from "uuid";
 import Filter from "./Filter";
@@ -19,7 +19,7 @@ export default function Content() {
     }
   }, []);
 
-  useMemo(() => {
+  useEffect(() => {
     localStorage.setItem(LOCAL_TODO_LIST, JSON.stringify(list));
   }, [list]);
 
