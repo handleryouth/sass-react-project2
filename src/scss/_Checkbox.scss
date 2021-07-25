@@ -1,6 +1,7 @@
 .round {
   position: relative;
   margin-right: 2rem;
+  @include noborderoutline;
 
   label {
     @include hw(28px, 28px);
