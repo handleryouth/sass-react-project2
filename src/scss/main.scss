@@ -1,3 +1,4 @@
+@import "@fontsource/josefin-sans";
 @import "./mixing";
 @import "./Content";
 @import "./Input";
@@ -10,6 +11,7 @@
 *::after,
 *::before {
   box-sizing: border-box;
+  font-family: "josefin-sans";
 }
 
 body {

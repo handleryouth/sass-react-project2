@@ -1,11 +1,11 @@
 .content {
-  text-align: center;
+  min-width: 320px;
 }
 .content__container {
-  width: 50%;
+  width: clamp(35rem, 45vw, 40rem);
   background-color: transparent;
   position: relative;
-  bottom: 13rem;
+  bottom: clamp(10rem, 14vw, 12rem);
   @include paddingmargin(0, 0 auto);
   &--title {
     @include flexContainer(row, center, space-between);
@@ -17,6 +17,10 @@
       margin: 0;
       color: white;
       letter-spacing: 13px;
+
+      @media (max-width: 768px) {
+        font-size: clamp(2rem, 6vw, 2.5rem);
+      }
     }
     img {
       cursor: pointer;
@@ -40,6 +44,19 @@
     padding: 1rem;
   }
   &--clue {
-    margin-top: 2rem;
+    display: block;
+    text-align: center;
+    position: relative;
+    bottom: 5rem;
+  }
+
+  @media (max-width: 768px) {
+    width: clamp(320px, 73vw, 35rem);
+    &--mobile-section {
+      @include flexContainer(row, center, center);
+      margin-top: 3rem;
+      background-color: #25273c;
+      height: 3rem;
+    }
   }
 }

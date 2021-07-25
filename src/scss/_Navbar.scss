@@ -1,6 +1,11 @@
-.navbar{
-    img{
-        width: 100%;
-        vertical-align: middle;
+.navbar {
+  img {
+    width: 100%;
+    vertical-align: middle;
+    height: clamp(13.5rem, 18vw, 16rem);
+
+    @media (max-width: 768px) {
+      min-width: 320px;
     }
+  }
 }

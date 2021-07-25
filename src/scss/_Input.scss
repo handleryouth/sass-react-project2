@@ -6,9 +6,13 @@
     flex-grow: 1;
     @include hw(3rem, auto);
     @include noborderoutline;
-    font-size: 1.3rem;
+    font-size: clamp(1.1rem, 2vw, 1.2rem);
     background-color: transparent;
     color: hsl(234, 11%, 52%);
+
+    @media (max-width: 768px) {
+      width: 12rem;
+    }
   }
   &__button {
     @include hw(3rem, 4rem);

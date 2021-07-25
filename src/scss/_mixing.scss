@@ -11,10 +11,10 @@
   outline: none;
 }
 
-@mixin borderoutline($border, $border-radius, $outline){
-    border: $border;
-    border-radius: $border-radius;
-    outline: $outline;
+@mixin borderoutline($border, $border-radius, $outline) {
+  border: $border;
+  border-radius: $border-radius;
+  outline: $outline;
 }
 
 @mixin hw($height, $width) {

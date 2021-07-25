@@ -1,4 +1,5 @@
 import { useState, useContext, useEffect } from "react";
+import Media from "react-media";
 import { themeContext } from "../App";
 import { v4 as uuidv4 } from "uuid";
 import Filter from "./Filter";
@@ -86,6 +87,55 @@ export default function Content() {
             />
           </div>
         </div>
+
+        <Media query="(max-width: 768px)">
+          {(matches) =>
+            matches ? (
+              <div
+                className={`content__container--mobile-section shadow content__container--filter ${
+                  theme ? "darktheme" : "whitetheme"
+                }`}
+              >
+                <button
+                  style={
+                    section === "all" ? { color: "hsl(220, 98%, 61%)" } : null
+                  }
+                  className="filter__button filter__button--all"
+                  onClick={(e) => setSection(e.target.value)}
+                  value="all"
+                >
+                  All
+                </button>
+                <button
+                  style={
+                    section === "active"
+                      ? { color: "hsl(220, 98%, 61%)" }
+                      : null
+                  }
+                  className="filter__button filter__button--active"
+                  onClick={(e) => setSection(e.target.value)}
+                  value="active"
+                >
+                  Active
+                </button>
+                <button
+                  style={
+                    section === "complete"
+                      ? { color: "hsl(220, 98%, 61%)" }
+                      : null
+                  }
+                  className="filter__button filter__button--complete"
+                  onClick={(e) => setSection(e.target.value)}
+                  value="complete"
+                >
+                  Completed
+                </button>
+              </div>
+            ) : (
+              ""
+            )
+          }
+        </Media>
       </div>
       <span className="content__container--clue">
         Drag and drop to reorder list
